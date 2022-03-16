@@ -174,7 +174,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Milano\",\n                \"postalCode\": 20129,\n                \"state\": \"MI\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"\",\n            \"insuranceValue\": \"\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": true,\n            \"service\": \"express\"\n        }\n    }\n}"
+							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Milano\",\n                \"postalCode\": 20129,\n                \"state\": \"MI\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"Insured goods description\",\n            \"insuranceValue\": \"123.45\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": true,\n            \"service\": \"express\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/shipments",
@@ -213,7 +213,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Milano\",\n                \"postalCode\": 20129,\n                \"state\": \"MI\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"\",\n            \"insuranceValue\": \"\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": false,\n            \"service\": \"express\"\n        }\n    }\n}"
+							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Milano\",\n                \"postalCode\": 20129,\n                \"state\": \"MI\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"Insured goods description\",\n            \"insuranceValue\": \"123.45\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": false,\n            \"service\": \"express\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/shipments",
@@ -308,7 +308,7 @@
 					"response": []
 				},
 				{
-					"name": "Save shipment (no packages)",
+					"name": "Save shipment (without packages)",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -388,7 +388,7 @@
 					"response": []
 				},
 				{
-					"name": "Get shipment",
+					"name": "Retrieve information about an existing shipment",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -406,7 +406,7 @@
 					"response": []
 				},
 				{
-					"name": "Get shipment documents",
+					"name": "Retrieve shipment documents",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -419,6 +419,25 @@
 								"shipments",
 								"{{shipmentId}}",
 								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve shipment tracking information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/shipments/{{shipmentId}}/tracking",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipments",
+								"{{shipmentId}}",
+								"tracking"
 							]
 						}
 					},
