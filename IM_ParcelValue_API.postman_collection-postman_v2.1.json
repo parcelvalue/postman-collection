@@ -7,102 +7,25 @@
 	},
 	"item": [
 		{
-			"name": "Test",
+			"name": "Addresses",
 			"item": [
 				{
-					"name": "Test GET",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"accept": true
-						}
-					},
+					"name": "Search addresses",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/test",
+							"raw": "{{baseUrl}}/addresses?searchString={{addressSearchString}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Test POST (Unsupported method)",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"accept": true
-						}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/test",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"test"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Test GET Id",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"accept": true
-						}
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/test/123",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"test",
-								"123"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Test GET Id and parameters",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"accept": true
-						}
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/test/123?key1=value1&key2=value2",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"test",
-								"123"
+								"addresses"
 							],
 							"query": [
 								{
-									"key": "key1",
-									"value": "value1"
-								},
-								{
-									"key": "key2",
-									"value": "value2"
+									"key": "searchString",
+									"value": "{{addressSearchString}}"
 								}
 							]
 						}
@@ -143,6 +66,51 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "clients/authentication",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "ParcelValueApi hash={{authenticationToken}}, integrationKey={{integrationKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/clients/authentication",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients",
+								"authentication"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -174,7 +142,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Milano\",\n                \"postalCode\": 20129,\n                \"state\": \"MI\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"Insured goods description\",\n            \"insuranceValue\": \"123.45\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": true,\n            \"service\": \"express\"\n        }\n    }\n}"
+							"raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shipment\",\n        \"id\": 123,\n        \"attributes\": {\n            \"shipDate\": \"{{tomorrow}}\",\n            \"shipFrom\": {\n                \"name\" : \"Sender Name\",\n                \"address1\": \"Sender street 123\",\n                \"city\": \"Rome\",\n                \"postalCode\": \"00195\",\n                \"state\": \"RM\",\n                \"country\": \"IT\",\n                \"contact\": \"Sender Contactname\",\n                \"phone\": \"1234567890\",\n                \"email\": \"sender@ship.from\"\n            },\n            \"shipTo\": {\n                \"name\" : \"Receiver Name\",\n                \"address1\": \"Receiver address 123\",\n                \"city\": \"Muenchen\",\n                \"postalCode\": 80331,\n                \"country\": \"DE\",\n                \"contact\": \"Receiver Contactname\",\n                \"phone\": \"987654321\",\n                \"email\": \"receiver@ship.to\"\n            },\n            \"packages\": [{\n                \"weight\": {\n                    \"value\": \"1.2\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            },\n            {\n                \"weight\": {\n                    \"value\": \"1.9\",\n                    \"units\": \"1\"\n                },\n                \"dimensions\": {\n                    \"length\": \"32\",\n                    \"width\": \"33\",\n                    \"height\": \"34\",\n                    \"units\": \"1\"\n                },\n                \"type\": \"CARTON\"\n            }],\n            \"goodsDescription\": \"Items from order #1\",\n            \"insuranceDescription\": \"Insured goods description\",\n            \"insuranceValue\": \"123.45\",\n            \"invoiceSubtotal\": {\n                \"amount\": \"13.69\",\n                \"currency\": \"EUR\"\n            },\n            \"customerReference\": \"REF 123\",\n            \"specialInstructions\": \"Second door on the left\",\n            \"confirmationEmail\": \"documents@ship.from\",\n            \"booking\": true\n        },\n        \"meta\": {\n            \"scheduledProcessing\": true,\n            \"service\": \"express\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/shipments",
@@ -446,6 +414,164 @@
 			]
 		},
 		{
+			"name": "ShipmentSummaries",
+			"item": [
+				{
+					"name": "Retrieve shipment summaries (default)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/shipment-summaries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipment-summaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve shipment summaries (with filters)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/shipment-summaries?dateFrom={{filterDateFrom}}&dateTo={{filterDateTo}}&limit={{filterLimit}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipment-summaries"
+							],
+							"query": [
+								{
+									"key": "dateFrom",
+									"value": "{{filterDateFrom}}"
+								},
+								{
+									"key": "dateTo",
+									"value": "{{filterDateTo}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{filterLimit}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Test GET",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test POST (Unsupported method)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test GET Id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/test/123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"test",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test GET Id and parameters",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/test/123?key1=value1&key2=value2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"test",
+								"123"
+							],
+							"query": [
+								{
+									"key": "key1",
+									"value": "value1"
+								},
+								{
+									"key": "key2",
+									"value": "value2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Home",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
@@ -496,19 +622,59 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "DO_NOT_EDIT"
+			"value": ""
 		},
 		{
 			"key": "token",
-			"value": "DO_NOT_EDIT"
+			"value": ""
 		},
 		{
 			"key": "shipmentId",
-			"value": "DO_NOT_EDIT"
+			"value": ""
 		},
 		{
 			"key": "shipmentReference",
-			"value": "DO_NOT_EDIT"
+			"value": ""
+		},
+		{
+			"key": "integrationKey",
+			"value": ""
+		},
+		{
+			"key": "authenticationToken",
+			"value": ""
+		},
+		{
+			"key": "addressSearchString",
+			"value": ""
+		},
+		{
+			"key": "addressSearchCountryCode",
+			"value": ""
+		},
+		{
+			"key": "addressSearchPostalCode",
+			"value": ""
+		},
+		{
+			"key": "addressSearchCity",
+			"value": ""
+		},
+		{
+			"key": "addressSearchState",
+			"value": ""
+		},
+		{
+			"key": "filterDateFrom",
+			"value": ""
+		},
+		{
+			"key": "filterDateTo",
+			"value": ""
+		},
+		{
+			"key": "filterLimit",
+			"value": ""
 		}
 	]
 }
